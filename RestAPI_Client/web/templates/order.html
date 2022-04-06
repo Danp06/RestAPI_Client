@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+<div class="container-fluid p-5 bg-primary text-white text-center">
+  <h1>Orders</h1>
+</div>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-6">
+      <h3>Find order</h3>
+      <p>Ingresa el numero de tu orden: </p>
+            <form action="/find_order" method="post">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup_id">Id</span>
+                    <input type="text" class="form-control" name="id" aria-label="Sizing example input" aria-describedby="inputGroup_id">
+                </div>
+                <br >
+                <input class="btn btn-primary" type="submit" name="form" value="Submit" />
+            </form>
+    </div>
+    <div class="col-sm-6">
+      <h3>Delete order</h3>
+      <p>Ingresa el numero de tu orden: </p>
+            <form action="/order_delete" method="post">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup_id">Id</span>
+                    <input type="text" class="form-control" name="id" aria-label="Sizing example input" aria-describedby="inputGroup_id">
+                </div>
+                <br >
+                <input class="btn btn-primary" type="submit" name="form" value="Submit" />
+            </form>
+</div>
+{% endblock %}
