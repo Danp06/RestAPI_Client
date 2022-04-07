@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="container-fluid p-4 bg-primary text-white text-center">
+  <h1>User options</h1>
+<a href="/new_user" class="btn btn-success float-right">Add New user</a>
+</div>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-4">
+      <div>
+    <h3> Find User</h3>
+    <form  action="/get_user" method="post">
+        <label  class="uname" >Name</label>
+        <input  name="username" required="required" type="text"  />
+        <input type="submit" name="form" value="Buscar"/>
+    </form>
+    </div>
+    </div>
+
+    <div class="col-sm-4">
+      <div id="update" class="form">
+  <form  action="/update_user" method="post">
+    <h3> Update User</h3>
+    <p>
+        <label for="usernamesignup" class="uname" >Name</label>
+        <input id="usernamesignup" name="username"  type="text" />
+    </p>
+    <p>
+        <label for="emailsignup" class="youmail" > Email</label>
+        <input id="emailsignup" name="email" type="text" />
+    </p>
+    <p>
+        <label for="passwordsignup" class="youpasswd" >Password </label>
+        <input id="passwordsignup" name="password"/>
+    </p>
+    <p class="signin button">
+        <input type="submit" name="form" value="actualizar"/>
+    </p>
+  </form>
+</div>
+    </div>
+    <div class="col-sm-3">
+      <h3>Eliminar cuenta </h3>
+    <form action="/delete_user" method="post">
+        <label>Delete account</label>
+        <input name="username" type="text">
+        <input type="submit" name="form" value="Delete">
+    </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
